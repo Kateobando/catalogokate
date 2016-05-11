@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Categoria
+{% endblock }
+
+{% block content %}
+	<h1>{{ categoria.nombre }}</h1>
+	{% if categoria.imagen %}
+		<img src="/media/{{ categoria.imagen }}" width ="80px">
+	{% endif %}
+	<br>
+	<p><b>Marca:</b> {{ categoria.marca }} </p>
+	<p><b>Descripcion:</b> {{ categoria.descripcion }} </p>
+
+	{% for c in categorias %}
+		<span class="label label-info">{{  c.nombre }}</span>
+	{% endfor %}
+
+	<br>
+	<a href="/categoria/page/1">Mostrar la lista de Categoria</a>
+{% endblock %}	
